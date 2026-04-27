@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>EMA — Příprava na 12. týdenní test (B1B38EMA)</title>
-
+ 
 <script>
   MathJax = {
     tex: {
@@ -18,7 +18,7 @@
   };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js" async></script>
-
+ 
 <style>
   :root{
     --bg:#0e1116; --bg2:#171b22; --card:#1d222b; --card2:#252c38;
@@ -83,18 +83,18 @@
     padding:6px 12px;border-radius:6px;cursor:pointer;font-size:13px;margin-right:6px}
   .controls button:hover{border-color:var(--accent);color:var(--accent)}
   footer{padding:24px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);text-align:center}
-
+ 
   .imgwrap{background:#fafbfc;border-radius:8px;padding:10px;margin:12px 0;text-align:center}
   .imgwrap img{max-width:100%;height:auto;border-radius:4px}
   .caption{color:var(--muted);font-size:12.5px;text-align:center;margin-top:6px}
-
+ 
   /* MathJax tweaks */
   mjx-container{overflow-x:auto;overflow-y:hidden;max-width:100%}
   mjx-container[display="true"]{margin:.6em 0!important}
 </style>
 </head>
 <body>
-
+ 
 <header>
   <div class="container">
     <h1>Příprava na test — B1B38EMA, 12. týden</h1>
@@ -102,16 +102,16 @@
     <div class="meta">Test: <b>20 minut</b> · <b>2 otázky</b> · <b>11 bodů</b> &nbsp;|&nbsp; Pokrývá látku <b>přednášek 6&ndash;8</b></div>
   </div>
 </header>
-
+ 
 <div class="container">
-
+ 
 <div class="controls">
   <button onclick="document.querySelectorAll('details.q').forEach(d=>d.open=true)">▼ Rozbalit vše</button>
   <button onclick="document.querySelectorAll('details.q').forEach(d=>d.open=false)">▲ Sbalit vše</button>
   <span style="color:var(--muted);font-size:12.5px;margin-left:12px">Klikni na otázku pro vzorové řešení.
   <span class="slideref">P7 · slide N</span> = přednáška 7, slide N.</span>
 </div>
-
+ 
 <nav class="toc">
   <h3>Obsah</h3>
   <ol>
@@ -123,12 +123,12 @@
     <li><a href="#cheat">Tahák — klíčové vztahy</a></li>
   </ol>
 </nav>
-
+ 
 <!-- ============================================================== -->
 <section class="topic" id="odpory">
 <h2>1. Měření odporů</h2>
 <div class="topic-sub">Aktuální variantu C-2 (ZS 25-26) tvoří Wheatstone (3 b.) + Z→U pro cívku (4 b.). Starší varianty C-1, C-3 až C-10 obsahují další typové otázky níže.</div>
-
+ 
 <!-- Q1.1 -->
 <details class="q">
 <summary>
@@ -139,27 +139,31 @@
   </span>
 </summary>
 <div class="answer">
-
+ 
 <h4>a) Schéma a princip</h4>
 <p>Schéma viz <span class="slideref">P7 · slide 7</span> (Měření malých odporů — čtyřvodičová Kelvinova metoda).</p>
 <p><b>Princip:</b> Zdroj proudu je připojen k $R_X$ dvěma vnějšími „proudovými" svorkami; voltmetr je připojen dvěma vnitřními „napěťovými" svorkami přímo na tělese rezistoru. Proudovými přívody teče celý měřicí proud a vzniká na nich úbytek napětí (chyba), ten ale voltmetr neměří. Napěťovými přívody teče zanedbatelný proud (díky velkému $R_V$), takže na nich nevzniká úbytek a měří se čistě napětí na $R_X$.</p>
-
+ 
 <h4>b) Vztah pro $R_X$ a nejistotu</h4>
 $$\boxed{\;R_X \;=\; \dfrac{U}{I}\;}$$
-
-<p>Relativní standardní nejistota — zákon o šíření nejistot pro podíl:</p>
+ 
+<p><b>Absolutní nejistota</b> — z parciálních derivací (forma z přednášky):</p>
+$$u(R_X) \;=\; \sqrt{\left(\dfrac{1}{I}\,u(U)\right)^{\!2} + \left(-\dfrac{U}{I^{\,2}}\,u(I)\right)^{\!2}}$$
+ 
+<p><b>Relativní nejistota</b> — pro čistý podíl velmi pěkný tvar:</p>
 $$u_r(R_X) \;=\; \sqrt{\,u_r^2(U)+u_r^2(I)\,}$$
-
+<p>Vztah mezi formami: $u(R_X) = R_X\cdot u_r(R_X)$.</p>
+ 
 <h4>c) Potlačení vlivu termoelektrických napětí</h4>
 <p><b>Metoda komutace proudu:</b> změříme napětí postupně při kladném proudu ($U^{+}$) a po přepólování zdroje ($U^{-}$). Termoelektrické napětí $U_T$ má v obou měřeních <b>stejné znaménko</b>, kdežto užitečný úbytek $R_X I$ změní znaménko spolu s proudem. V <b>signed</b> rozdílu se proto $U_T$ vyruší:</p>
-
+ 
 $$\boxed{\;U_{R_X} \;=\; \dfrac{U^{+} - U^{-}}{2}\;\;\Rightarrow\;\;R_X \;=\; \dfrac{U_{R_X}}{I}\;}$$
-
+ 
 <div class="errorfix"><b>Pozor!</b> Verze s absolutními hodnotami $U=(|U^{+}|+|U^{-}|)/2$ funguje jen, pokud platí $|R_X I| > |U_T|$. U mikroohmů se snadno stane, že termonapětí převyšuje užitečný signál — pak by absolutní hodnoty daly výsledek <em>$U_T$ místo nuly</em>. Vzorec se znaménky ($U^{+}-U^{-}$)/2 funguje vždy.</div>
-
+ 
 </div>
 </details>
-
+ 
 <!-- Q1.2 -->
 <details class="q">
 <summary>
@@ -170,20 +174,20 @@ $$\boxed{\;U_{R_X} \;=\; \dfrac{U^{+} - U^{-}}{2}\;\;\Rightarrow\;\;R_X \;=\; \d
   </span>
 </summary>
 <div class="answer">
-
+ 
 <h4>a) Schéma a princip</h4>
 <p>Velké odpory (řádově $\text{G}\Omega$) měříme zdrojem napětí a citlivým mikroampérmetrem. Klíčové je <b>stínění</b> — kovový kryt rezistoru a svorka <em>Guard</em> jsou připojeny na společnou zem mezi zdrojem a ampérmetrem. Princip stínění viz <span class="slideref">P8 · slide 8</span>.</p>
-
+ 
 <h4>b) Vliv parazitních admitancí (svodových odporů)</h4>
 <ul>
 <li>$R_{iz1}$ (parazitně mezi výstupem zdroje a stíněním) je paralelně ke zdroji $\Rightarrow$ <b>neuplatní se</b>, pouze ho mírně zatěžuje.</li>
 <li>$R_{iz2}$ (mezi vnitřní svorkou $R_X$ a stíněním, paralelně k ampérmetru) — díky tomu, že vnitřní odpor ampérmetru je velmi malý a obě strany této parazitní cesty jsou na potenciálu země (Guard), <b>neteče přes ni proud</b>. Svodový proud se stíněním vrací rovnou na zem a ampérmetr ho obejde.</li>
 </ul>
 <div class="keytip"><b>Závěr:</b> Stínění (Guard) zajistí, že povrchové svodové proudy obejdou měřicí ampérmetr a neovlivní výsledek.</div>
-
+ 
 </div>
 </details>
-
+ 
 <!-- Q1.3 -->
 <details class="q">
 <summary>
@@ -194,24 +198,29 @@ $$\boxed{\;U_{R_X} \;=\; \dfrac{U^{+} - U^{-}}{2}\;\;\Rightarrow\;\;R_X \;=\; \d
   </span>
 </summary>
 <div class="answer">
-
+ 
 <h4>a) Schéma</h4>
 <p>Schéma viz <span class="slideref">P7 · slide 9</span> (převodník R→U pro střední odpory) a <span class="slideref">P7 · slide 10</span> (pro malé odpory).</p>
 <p>Invertující zapojení s OZ. Referenční napětí $U_r$ je přivedeno přes známý normálový rezistor $R_N$ na invertující vstup, měřený odpor $R_X$ je ve zpětné vazbě.</p>
-
+ 
 <h4>b) Vztah pro $R_X$</h4>
 <p>Vstupní proud do invertujícího vstupu OZ je nulový, přes $R_N$ tedy teče celý proud:</p>
 $$I \;=\; \dfrac{U_r}{R_N}\,, \qquad U_2 \;=\; -\,I\,R_X \;=\; -\,U_r\,\dfrac{R_X}{R_N}$$
-
+ 
 $$\boxed{\;R_X \;=\; -\,\dfrac{U_2}{U_r}\,R_N\;}$$
-
+ 
 <h4>c) Standardní nejistota (ideální OZ)</h4>
+ 
+<p><b>Absolutní</b> — z parciálních derivací (forma z přednášky <span class="slideref">P7 · slide 9</span>):</p>
+$$u(R_X) \;=\; \sqrt{\left(-\dfrac{R_N}{U_r}\,u(U_2)\right)^{\!2} + \left(\dfrac{U_2\,R_N}{U_r^{\,2}}\,u(U_r)\right)^{\!2} + \left(-\dfrac{U_2}{U_r}\,u(R_N)\right)^{\!2}}$$
+ 
+<p><b>Relativní</b> — pro čisté násobení/dělení:</p>
 $$u_r(R_X) \;=\; \sqrt{\,u_r^2(U_2)+u_r^2(U_r)+u_r^2(R_N)\,}$$
 <p>Pro reálný OZ se přidává člen od vstupního klidového proudu $I_{1N}$, viz <span class="slideref">P7 · slide 9</span>.</p>
-
+ 
 </div>
 </details>
-
+ 
 <!-- Q1.4 -->
 <details class="q">
 <summary>
@@ -222,7 +231,7 @@ $$u_r(R_X) \;=\; \sqrt{\,u_r^2(U_2)+u_r^2(U_r)+u_r^2(R_N)\,}$$
   </span>
 </summary>
 <div class="answer">
-
+ 
 <h4>a) Dvě varianty zapojení</h4>
 <p>Schémata viz <span class="slideref">P7 · slide 5</span> (Ohmova metoda).</p>
 <table class="compact">
@@ -230,18 +239,18 @@ $$u_r(R_X) \;=\; \sqrt{\,u_r^2(U_2)+u_r^2(U_r)+u_r^2(R_N)\,}$$
 <tr><td>Voltmetr měří úbytek na A-metru navíc. Chybu způsobuje $R_A$.<br>Korekce: $\;R_X = U_V/I_A - R_A$</td>
 <td>A-metr měří součet proudů (přes $R_X$ i $R_V$). Chybu způsobuje konečný $R_V$.<br>Korekce: $\;R_X = U_V / (I_A - U_V/R_V)$</td></tr>
 </table>
-
+ 
 <h4>b) Výpočet s korekcí pro „voltmetr před"</h4>
 $$U_V \;=\; U_{R_X}+U_{R_A} \;=\; R_X\,I_A + R_A\,I_A$$
 $$\boxed{\;R_X \;=\; \dfrac{U_V}{I_A} - R_A\;}$$
-
+ 
 <h4>c) Standardní nejistota (po korekci)</h4>
 $$u(R_X) \;=\; \sqrt{\;\left(\dfrac{1}{I_A}\,u(U_V)\right)^{\!2} + \left(-\dfrac{U_V}{I_A^{\,2}}\,u(I_A)\right)^{\!2}\;}$$
 <p>Nejistota $R_A$ se obvykle zanedbává — korekční člen je malý vůči naměřené hodnotě.</p>
-
+ 
 </div>
 </details>
-
+ 
 <!-- Q1.5 -->
 <details class="q">
 <summary>
@@ -252,21 +261,21 @@ $$u(R_X) \;=\; \sqrt{\;\left(\dfrac{1}{I_A}\,u(U_V)\right)^{\!2} + \left(-\dfrac
   </span>
 </summary>
 <div class="answer">
-
+ 
 <h4>a) Schéma a napětí na měřicí diagonále</h4>
 <p>Schéma viz <span class="slideref">P7 · slide 11</span> (Wheatstoneův můstek) a <span class="slideref">P7 · slide 19</span> (vyhodnocení tenzometrů).</p>
-
+ 
 <p><b>Obecný vztah</b> (napájení napětím $U_{nap}$):</p>
 $$U_{diag} \;=\; U_{nap}\!\left(\dfrac{R_1}{R_1+R_2} - \dfrac{R_3}{R_3+R_4}\right)$$
-
+ 
 <p><b>Podmínka rovnováhy:</b> $R_1\,R_4 = R_2\,R_3 \;\Rightarrow\; U_{diag}=0$.</p>
-
+ 
 <p><b>Pro malé rozvážení</b> ($R_1=R_0+\Delta R$, ostatní $=R_0$, napájení napětím):</p>
 $$\boxed{\;U_{diag} \;\approx\; \dfrac{U_{nap}}{4}\cdot\dfrac{\Delta R}{R_0}\;}$$
-
+ 
 <p>Obecně pro 4 aktivní senzory (sousední ramena s opačným znaménkem):</p>
 $$U_{diag} \;\approx\; \dfrac{U_{nap}}{4}\!\left(\dfrac{\Delta R_1}{R_0} - \dfrac{\Delta R_2}{R_0} + \dfrac{\Delta R_4}{R_0} - \dfrac{\Delta R_3}{R_0}\right)$$
-
+ 
 <h4>b) Jak zvýšit citlivost</h4>
 <table class="compact">
 <tr><th>Konfigurace</th><th>Citlivost</th><th>Linearizace</th><th>Tepl. komp.</th></tr>
@@ -275,10 +284,10 @@ $$U_{diag} \;\approx\; \dfrac{U_{nap}}{4}\!\left(\dfrac{\Delta R_1}{R_0} - \dfra
 <tr><td>4 aktivní (plný můstek)</td><td>$4\times$</td><td>ano</td><td>ano</td></tr>
 </table>
 <p>Senzory se v plném můstku zapojují tak, aby v sousedních ramenech byly opačná znaménka deformace ($+\Delta R$, $-\Delta R$) — tím se jejich příspěvky <b>sčítají</b>. Schémata diferenčního zapojení 2 a 4 tenzometrů viz <span class="slideref">P7 · slide 19</span>. Další možnost: zvýšit $U_{nap}$ — limit dán přípustným ohřevem senzorů.</p>
-
+ 
 </div>
 </details>
-
+ 
 <!-- Q1.6 -->
 <details class="q">
 <summary>
@@ -290,29 +299,35 @@ $$U_{diag} \;\approx\; \dfrac{U_{nap}}{4}\!\left(\dfrac{\Delta R_1}{R_0} - \dfra
 </summary>
 <div class="answer">
 <p>Schéma viz <span class="slideref">P7 · slide 8</span>. Měřený odpor $R_X$ je v sérii se známým normálovým rezistorem $R_N$, oběma teče stejný proud. Voltmetrem postupně změříme úbytky $U_X$ a $U_N$:</p>
-
+ 
 $$\boxed{\;R_X \;=\; \dfrac{U_X}{U_N}\,R_N\;}$$
-
+ 
 <p><b>Výhody:</b> proud se pokrátí, není nutná absolutní kalibrace voltmetru.</p>
-
-<p><b>Standardní nejistota</b> — protože jde o čisté násobení/dělení, použijeme <b>relativní nejistoty</b> (ekvivalentní logaritmická diferenciace, znaménka nehrají roli):</p>
-
+ 
+<h4>Standardní nejistota</h4>
+ 
+<p><b>Absolutní</b> — z parciálních derivací (forma z přednášky <span class="slideref">P7 · slide 8</span>):</p>
+ 
+$$u(R_X) \;=\; \sqrt{\left(\dfrac{R_N}{U_N}\,u(U_X)\right)^{\!2} + \left(-\dfrac{U_X\,R_N}{U_N^{\,2}}\,u(U_N)\right)^{\!2} + \left(\dfrac{U_X}{U_N}\,u(R_N)\right)^{\!2}}$$
+ 
+<p><b>Relativní</b> — protože jde o čisté násobení/dělení, lze elegantně použít:</p>
+ 
 $$\boxed{\;u_r(R_X) \;=\; \sqrt{\,u_r^2(U_X) + u_r^2(U_N) + u_r^2(R_N)\,}\;}$$
-
-<p>Absolutní nejistota: $u(R_X) = R_X \cdot u_r(R_X)$.</p>
-
+ 
+<p>Mezi formami: $u(R_X) = R_X \cdot u_r(R_X)$. Obě jsou ekvivalentní, na zkoušce dej obě.</p>
+ 
 <p><b>Rušivé vlivy</b> stejné jako u měření malých $R$ (termonapětí — komutace, odpor přívodů — čtyřvodičové připojení).</p>
-
+ 
 </div>
 </details>
-
+ 
 </section>
-
+ 
 <!-- ============================================================== -->
 <section class="topic" id="kmitocet">
 <h2>2. Měření kmitočtu a fázového rozdílu</h2>
 <div class="topic-sub">Méně časté na 12. týdenním testu, ale podle sylabu možné. <span class="slideref">Přednáška 6</span>.</div>
-
+ 
 <!-- Q2.1 -->
 <details class="q">
 <summary>
@@ -323,38 +338,38 @@ $$\boxed{\;u_r(R_X) \;=\; \sqrt{\,u_r^2(U_X) + u_r^2(U_N) + u_r^2(R_N)\,}\;}$$
   </span>
 </summary>
 <div class="answer">
-
+ 
 <h4>Režim přímého měření kmitočtu — <span class="slideref">P6 · slide 4</span></h4>
 <p>Po dobu otevřeného hradla $T_N$ se načte $N$ pulzů vstupního signálu:</p>
 $$\boxed{\;f_X \;=\; \dfrac{N}{T_N}\;}$$
 <p>Vhodné pro <b>vysoké frekvence</b> (např. $f_X &gt; 10\,\text{kHz}$). Rozlišovací schopnost čítače (kvantizační chyba $\pm 1$ pulz):</p>
 $$\Delta' f_X \;=\; \dfrac{1}{T_N}$$
-
+ 
 <h4>Režim měření doby periody — <span class="slideref">P6 · slide 6</span></h4>
 <p>Po dobu jedné periody $T_X$ měřeného signálu se načítají normálové pulzy o frekvenci $f_N$:</p>
 $$\boxed{\;T_X \;=\; \dfrac{N}{f_N}\;}$$
 <p>Vhodné pro <b>nízké frekvence</b> (např. $f_X &lt; 10\,\text{kHz}$). Rozlišovací schopnost: $\Delta' T_X = 1/f_N$.</p>
-
+ 
 <h4>Standardní nejistota typu B (přímé měření $f$) — <span class="slideref">P6 · slide 5</span></h4>
-
+ 
 $$u(f_X) \;=\; \sqrt{\;\left(\dfrac{\Delta' f_X}{\sqrt{3}}\right)^{\!2} + \left(\dfrac{\Delta f_X}{\sqrt{3}}\right)^{\!2}\;}$$
-
+ 
 <p>kde:</p>
 <ul>
 <li>$\Delta' f_X = 1/T_N$ — chyba <b>rozlišení</b> čítače (kvantizace, $\pm 1$ pulz),</li>
 <li>$\Delta f_X = (\delta f_O/100)\cdot f_X$ — chyba způsobená <b>nestabilitou krystalového oscilátoru</b> $\delta f_O$ (v %).</li>
 </ul>
-
+ 
 <div class="errorfix"><b>Pozor na zápis:</b> Δ s čárkou ($\Delta'$) označuje chybu <em>rozlišitelnosti</em>; Δ bez čárky ($\Delta$) označuje chybu <em>stability</em> oscilátoru. Jedná se o dva různé příspěvky k nejistotě, nikoliv podíl.</div>
-
+ 
 <h4>Reciproční měření — <span class="slideref">P6 · slide 10–11</span></h4>
 <p>Měří dobu $T_K$ nejbližšího celistvého počtu $K$ period za pevně danou dobu $T_S$:</p>
 $$f_X \;=\; \dfrac{K}{T_K} \;=\; f_N\,\dfrac{K}{N}$$
 <p><b>Výhoda:</b> rozlišení nezávisí na $f_X$.</p>
-
+ 
 </div>
 </details>
-
+ 
 <!-- Q2.2 -->
 <details class="q">
 <summary>
@@ -365,33 +380,33 @@ $$f_X \;=\; \dfrac{K}{T_K} \;=\; f_N\,\dfrac{K}{N}$$
   </span>
 </summary>
 <div class="answer">
-
+ 
 <h4>Definice — <span class="slideref">P6 · slide 14</span></h4>
 <p>Pro dva harmonické průběhy stejné frekvence $x_1(t)=X_{1m}\sin\omega t$, $\;x_2(t)=X_{2m}\sin(\omega t-\varphi)$:</p>
 $$\boxed{\;\varphi \;=\; \omega t_0 \;=\; \dfrac{2\pi t_0}{T}\;\text{(rad)} \;=\; \dfrac{360\,t_0}{T}\;\text{(°)}\;}$$
-
+ 
 <h4>a) Analogový fázoměr (měření střední hodnoty) — <span class="slideref">P6 · slide 16</span></h4>
 <p>XOR / klopný obvod generuje obdélníkový signál o střídě úměrné fázovému rozdílu, jehož střední hodnota je:</p>
 $$U_0 \;=\; U_P\cdot\dfrac{t_0}{T} \;=\; \dfrac{U_P\,\varphi}{2\pi}$$
-
+ 
 <h4>b) Číslicový fázoměr (čítačem) — <span class="slideref">P6 · slide 17</span></h4>
 <p>Měří se interval $t_0$ mezi nulovými body obou signálů a perioda $T$, čítají se pulzy normálové frekvence $f_N$:</p>
 $$N \;=\; t_0\,f_G \;=\; t_0\,k_D\,f_N \quad\Rightarrow\quad \varphi = \dfrac{360\,t_0}{T}\;\text{(°)}$$
-
+ 
 <h4>c) Z digitálního osciloskopu — <span class="slideref">P6 · slide 15</span></h4>
 <p>Z čísel vzorků průchodů nulou: $T=(k_3-k_1)T_S$, $t_0=(k_2-k_1)T_S$, odtud:</p>
 $$\varphi \;=\; 2\pi\cdot\dfrac{k_2-k_1}{k_3-k_1}$$
-
+ 
 <h4>d) Další metody</h4>
 <ul>
 <li>Vektorvoltmetr.</li>
 <li>Měření výkonů: $\cos\varphi = P/S$.</li>
 <li>Analogový osciloskop v režimu X-Y — <b>Lissajousovy obrazce</b>.</li>
 </ul>
-
+ 
 </div>
 </details>
-
+ 
 <!-- Q2.3 -->
 <details class="q">
 <summary>
@@ -410,14 +425,14 @@ $$\varphi \;=\; 2\pi\cdot\dfrac{k_2-k_1}{k_3-k_1}$$
 </ul>
 </div>
 </details>
-
+ 
 </section>
-
+ 
 <!-- ============================================================== -->
 <section class="topic" id="impedance">
 <h2>3. Měření impedancí (Q cívky, tg δ kondenzátoru)</h2>
 <div class="topic-sub">Klíčové téma testu — varianta C-2 (ZS 25-26) má impedanční otázku za 4 body. <span class="slideref">Přednáška 8</span>.</div>
-
+ 
 <!-- Q3.1 -->
 <details class="q">
 <summary>
@@ -428,31 +443,35 @@ $$\varphi \;=\; 2\pi\cdot\dfrac{k_2-k_1}{k_3-k_1}$$
   </span>
 </summary>
 <div class="answer">
-
+ 
 <h4>Schéma</h4>
-<p>Schéma převodníku Z→U pro měření cívky viz <span class="slideref">P8 · slide 7</span> (pravá strana — „Měření parametrů cívek").</p>
+<p>Schéma převodníku Z→U pro měření cívky viz <span class="slideref">P8 · slide 7</span> (<b>levá strana</b> — „Měření parametrů cívek").</p>
 <p>Invertující OZ. Vstup — rezistor $R_N$, ve zpětné vazbě měřená cívka (sériový model $R_X + j\omega L_X$).</p>
-
-<h4>Odvození</h4>
-<p>Přenos invertujícího zapojení:</p>
-$$U_2 \;=\; -\,\dfrac{Z_2}{Z_1}\,U_r$$
-<p>S $Z_1 = R_N$ a $Z_2 = R_X + j\omega L_X$:</p>
-$$U_2 \;=\; -\,\dfrac{R_X + j\omega L_X}{R_N}\,U_r$$
-
+ 
+<h4>Odvození (přesně dle <span class="slideref">P8 · slide 7</span>)</h4>
+<p>Vstupní proud do invertujícího vstupu OZ je nulový — z <b>1. Kirchhoffova zákona</b> v uzlu invertujícího vstupu plyne $I_1 = -I_2$:</p>
+ 
+$$I_1 = -I_2 \;\Rightarrow\; \dfrac{U_r}{R_N} \;=\; -\,\dfrac{U_2}{R_X + j\omega L_X}$$
+ 
+<p>Z toho vyjádříme komplexní impedanci cívky:</p>
+ 
+$$(R_X + j\omega L_X) \;=\; -\,\dfrac{U_2}{U_r}\,R_N$$
+ 
 <p>Rozdělením na reálnou a imaginární složku:</p>
-$$\boxed{\;R_X \;=\; -\,\mathrm{Re}\,U_2 \cdot \dfrac{R_N}{U_r}\,, \qquad L_X \;=\; -\,\dfrac{\mathrm{Im}\,U_2}{\omega}\cdot\dfrac{R_N}{U_r}\;}$$
-
-<p><b>Činitel jakosti cívky:</b></p>
+$$\boxed{\;R_X \;=\; -\,\dfrac{\mathrm{Re}\,U_2}{U_r}\,R_N\,, \qquad L_X \;=\; -\,\dfrac{\mathrm{Im}\,U_2}{\omega\,U_r}\,R_N\;}$$
+ 
+<p><b>Činitel jakosti cívky</b> &mdash; definice ze <span class="slideref">P8 · slide 3</span> (sériový náhradní model: $L_S$, $R_S$ &nbsp;&rArr;&nbsp; $Q = \omega L_S/R_S$). V našem zapojení je cívka v sériovém modelu $R_X + j\omega L_X$:</p>
+ 
 $$\boxed{\;Q_X \;=\; \dfrac{\omega L_X}{R_X} \;=\; \dfrac{\mathrm{Im}\,U_2}{\mathrm{Re}\,U_2}\;}$$
-
+ 
 <div class="keytip"><b>Mnemo:</b> Cívku máme <em>ve zpětné vazbě</em>, takže výstup je úměrný <em>impedanci</em> $Z_X$. Reálná část → $R_X$, imaginární přes $\omega$ → $L_X$, jejich poměr → $Q_X$.</div>
-
+ 
 <h4>Stínění a parazitní admitance — <span class="slideref">P8 · slide 8</span></h4>
 <p>Stínění měřené cívky se připojuje na <b>zem</b>. Mezi vstupem zdroje a stíněním je $Y_{10}$ paralelně s ideálním zdrojem $U_r$ — <b>neuplatní se</b>. Mezi výstupem OZ a stíněním je $Y_{40}$ paralelně s ideálním $U_2$ — <b>neuplatní se</b>. Na admitanci $Y_{20}$ (k virtuální nule) je nulové napětí, neteče proud — <b>neuplatní se</b>.</p>
-
+ 
 </div>
 </details>
-
+ 
 <!-- Q3.2 -->
 <details class="q">
 <summary>
@@ -463,30 +482,34 @@ $$\boxed{\;Q_X \;=\; \dfrac{\omega L_X}{R_X} \;=\; \dfrac{\mathrm{Im}\,U_2}{\mat
   </span>
 </summary>
 <div class="answer">
-
+ 
 <h4>Schéma</h4>
-<p>Schéma převodníku Y→U pro měření kondenzátoru viz <span class="slideref">P8 · slide 7</span> (levá strana — „Měření parametrů kondenzátorů").</p>
+<p>Schéma převodníku Y→U pro měření kondenzátoru viz <span class="slideref">P8 · slide 7</span> (<b>pravá strana</b> — „Měření parametrů kondenzátorů").</p>
 <p>Invertující OZ. Na vstupu měřený kondenzátor (paralelní model $G_X + j\omega C_X$), ve zpětné vazbě rezistor $R_N$.</p>
-
-<h4>Odvození</h4>
-<p>Vstupní proud teče přes admitanci kondenzátoru:</p>
-$$I_1 \;=\; U_r\cdot Y_X \;=\; U_r\,(G_X + j\omega C_X)$$
-<p>Výstupní napětí (přes $R_N$ ve zpětné vazbě):</p>
-$$U_2 \;=\; -\,I_1\cdot R_N \;=\; -\,U_r\,R_N\,(G_X + j\omega C_X)$$
-
-<p>Rozdělení na složky:</p>
+ 
+<h4>Odvození (přesně dle <span class="slideref">P8 · slide 7</span>)</h4>
+<p>Z <b>1. Kirchhoffova zákona</b> v uzlu invertujícího vstupu OZ ($I_1 = -I_2$, vstupní proud do OZ nulový):</p>
+ 
+$$I_1 = -I_2 \;\Rightarrow\; U_r\,(G_X + j\omega C_X) \;=\; -\,\dfrac{U_2}{R_N}$$
+ 
+<p>Vyjádříme admitanci kondenzátoru:</p>
+ 
+$$(G_X + j\omega C_X) \;=\; -\,\dfrac{U_2}{R_N\,U_r}$$
+ 
+<p>Rozdělením na složky:</p>
 $$\boxed{\;G_X \;=\; -\,\dfrac{\mathrm{Re}\,U_2}{U_r\,R_N}\,, \qquad C_X \;=\; -\,\dfrac{\mathrm{Im}\,U_2}{\omega\,U_r\,R_N}\;}$$
-
-<p><b>Ztrátový činitel kondenzátoru:</b></p>
+ 
+<p><b>Ztrátový činitel kondenzátoru</b> &mdash; definice ze <span class="slideref">P8 · slide 3</span> (paralelní náhradní model: $C_P$, $G_P$ &nbsp;&rArr;&nbsp; $\mathrm{tg}\,\delta = G_P/(\omega C_P) = 1/(\omega C_P R_P)$). V našem zapojení je kondenzátor v paralelním modelu $G_X + j\omega C_X$:</p>
+ 
 $$\boxed{\;\mathrm{tg}\,\delta \;=\; \dfrac{G_X}{\omega C_X} \;=\; \dfrac{\mathrm{Re}\,U_2}{\mathrm{Im}\,U_2}\;}$$
-
+ 
 <div class="keytip"><b>Mnemo:</b> Kondenzátor je na <em>vstupu</em>, takže výstup je úměrný <em>admitanci</em> $Y_X$. Imaginární složka přes $\omega$ → $C_X$, reálná → $G_X$, jejich poměr → $\mathrm{tg}\,\delta$.</div>
-
+ 
 <p>Stínění Y→U převodníku — diskuse viz otázka <a href="#q33" style="color:var(--accent)">3.3</a> a <span class="slideref">P8 · slide 8</span>.</p>
-
+ 
 </div>
 </details>
-
+ 
 <!-- Q3.3 -->
 <details class="q" id="q33">
 <summary>
@@ -497,12 +520,12 @@ $$\boxed{\;\mathrm{tg}\,\delta \;=\; \dfrac{G_X}{\omega C_X} \;=\; \dfrac{\mathr
   </span>
 </summary>
 <div class="answer">
-
+ 
 <p>Schéma se 4 uzly a parazitními admitancemi $Y_{10}\ldots Y_{40}$ viz <span class="slideref">P8 · slide 8</span> (horní část pro Y→U, dolní pro Z→U).</p>
-
+ 
 <h4>Označení uzlů u převodníku Y→U</h4>
 <p><b>1</b> = vstup od zdroje $U_r$, <b>2</b> = invertující vstup OZ (virtuální nula), <b>3</b> = výstup OZ ($U_2$), <b>0</b> = společná zem (= stínění).</p>
-
+ 
 <table class="compact">
 <tr><th>Parazit</th><th>Mezi uzly</th><th>Důsledek</th></tr>
 <tr><td>$Y_{10}$</td><td>1 ↔ zem (paral. k $U_r$)</td><td><b>Neuplatní se</b> — pouze zatěžuje zdroj $U_r$, ten je ideální napěťový.</td></tr>
@@ -510,14 +533,14 @@ $$\boxed{\;\mathrm{tg}\,\delta \;=\; \dfrac{G_X}{\omega C_X} \;=\; \dfrac{\mathr
 <tr><td>$Y_{30}$</td><td>3 ↔ zem (paral. k výstupu OZ)</td><td><b>Neuplatní se</b> — výstup OZ je ideální napěťový zdroj $U_2$.</td></tr>
 <tr><td>$Y_{40}$</td><td>0 ↔ zem (zem ↔ zem)</td><td>Triviálně bez efektu.</td></tr>
 </table>
-
+ 
 <div class="keytip"><b>Závěr:</b> Při správném stínění (kostra a stínění kabelů na <b>zem</b>) <b>žádná z parazitních admitancí výsledek neovlivní</b>. To je hlavní výhoda zapojení s OZ pro měření malých kapacit/impedancí.</div>
-
+ 
 <div class="errorfix"><b>Pozor:</b> Stínění (Guard) se připojuje výhradně na <b>zem</b>, nikdy ne na virtuální nulu. Připojení stínění na virtuální nulu by přivedlo veškerý nachytaný šum z okolí přímo na nejcitlivější vstup OZ.</div>
-
+ 
 </div>
 </details>
-
+ 
 <!-- Q3.4 -->
 <details class="q">
 <summary>
@@ -528,16 +551,16 @@ $$\boxed{\;\mathrm{tg}\,\delta \;=\; \dfrac{G_X}{\omega C_X} \;=\; \dfrac{\mathr
   </span>
 </summary>
 <div class="answer">
-
+ 
 <h4>Proč nelze běžný RLC metr</h4>
 <p>Běžný RLC měřič používá velmi malý měřicí proud (~mA). Indukčnost cívky s feromagnetickým jádrem však <b>závisí na proudu</b> kvůli nelinearitě magnetizační křivky $B$–$H$ (sytění, hystereze). Při malém proudu je $\mu_r$ jiné než v pracovním bodě a naměřená $L$ neodpovídá skutečnosti.</p>
-
+ 
 <h4>Řešení — sériová srovnávací metoda</h4>
 <p>Schéma viz <span class="slideref">P8 · slide 9</span>. Měříme při <b>jmenovitém pracovním proudu</b>, který nastavujeme silnějším střídavým zdrojem. Měřená cívka $L_X$ je v sérii s normálovým rezistorem $R_N$. Vektorovým voltmetrem (nebo dvoukanálovým osciloskopem se synchronizací) měříme $U_{R_N}$ (referenční fázor proudu) a $U_X$ na cívce. Z poměru a fázového posunu se získá $L_X$ a $R_X$.</p>
-
+ 
 </div>
 </details>
-
+ 
 <!-- Q3.5 -->
 <details class="q">
 <summary>
@@ -548,34 +571,34 @@ $$\boxed{\;\mathrm{tg}\,\delta \;=\; \dfrac{G_X}{\omega C_X} \;=\; \dfrac{\mathr
   </span>
 </summary>
 <div class="answer">
-
+ 
 <p>Schéma můstku viz <span class="slideref">P8 · slide 10</span>; transformátorový můstek viz <span class="slideref">P8 · slide 11</span>.</p>
-
+ 
 <p>Můstek se 4 impedancemi $Z_1\ldots Z_4$, napájení v jedné diagonále, detektor (nulový indikátor) v druhé. Rovnováha (nulový proud detektorem):</p>
 $$\boxed{\;Z_1\,Z_4 \;=\; Z_2\,Z_3\;}$$
-
+ 
 <p>Protože jde o komplexní rovnost, vede na <b>dvě podmínky</b> — modul a fáze:</p>
 $$|Z_1|\,|Z_4| = |Z_2|\,|Z_3|\,, \qquad \varphi_{Z_1}+\varphi_{Z_4}=\varphi_{Z_2}+\varphi_{Z_3}$$
-
+ 
 <h4>Transformátorový můstek</h4>
 <p>Indukční dělič (Kelvin–Varleyovo zapojení) zajišťuje přesný poměr napětí $N_1/N_2$ s přesností až $0{,}0001\,\%$. Rovnováha: $|Z_1|/|Z_2| = N_1/N_2$, $\varphi_{Z_1}=\varphi_{Z_2}$.</p>
-
+ 
 <h4>Dnešní použití</h4>
 <ul>
 <li>Dříve běžně pro přesné měření $R$, $L$, $C$ — dnes nahrazeno digitálními RLC metry.</li>
 <li>Dnes hlavně jako <b>nevyvážený můstek</b> pro vyhodnocení signálů z kapacitních a indukčnostních <b>senzorů</b>.</li>
 </ul>
-
+ 
 </div>
 </details>
-
+ 
 </section>
-
+ 
 <!-- ============================================================== -->
 <section class="topic" id="senzory">
 <h2>4. Kapacitní a indukčnostní senzory, LVDT</h2>
 <div class="topic-sub">Druhá polovina otázek — <span class="slideref">Přednáška 8 · slidy 13–15</span>.</div>
-
+ 
 <!-- Q4.1 -->
 <details class="q">
 <summary>
@@ -586,43 +609,43 @@ $$|Z_1|\,|Z_4| = |Z_2|\,|Z_3|\,, \qquad \varphi_{Z_1}+\varphi_{Z_4}=\varphi_{Z_2
   </span>
 </summary>
 <div class="answer">
-
+ 
 <h4>Princip kapacitního senzoru — <span class="slideref">P8 · slide 13</span></h4>
 $$\boxed{\;C_X \;=\; \dfrac{S\,\varepsilon_0\,\varepsilon_r}{d}\;}$$
 <p>Měřená veličina mění buď vzdálenost desek $d$ (úchylkoměry, senzory tlaku), plochu $S$, nebo permitivitu $\varepsilon_r$ (vlhkost, hladina, tloušťka filmu).</p>
-
+ 
 <h4>Diferenční senzor — transformátorový můstek</h4>
 <p>Schéma viz <span class="slideref">P8 · slide 13</span> (spodní polovina — „Diferenční kapacitní senzory, obvod vyhodnocení"). Transformátor s napětím $U_Z$ na sekundáru má vyvedený střed $N$, který je uzemněn (referenční bod). Horní svorka sekundáru je na potenciálu $+U_Z/2$, spodní $-U_Z/2$ (vůči středu). Mezi horní svorkou a uzlem $U_2$ je $C_2$, mezi $U_2$ a spodní svorkou je $C_1$.</p>
-
+ 
 <h4>Odvození (sledujeme značení v přednášce: $C_2$ nahoře, $C_1$ dole)</h4>
 <p>Předpokládáme, že z uzlu $U_2$ neodtéká žádný proud (vysoká vstupní impedance vyhodnocovacího obvodu). 1. Kirchhoffův zákon: $I_1 + I_2 = 0$.</p>
-
+ 
 <div class="step"><span class="num">1)</span> Proud z horní svorky kondenzátorem $C_2$:
 $$I_2 \;=\; \left(\tfrac{U_Z}{2} - U_2\right)\!\cdot j\omega C_2$$</div>
-
+ 
 <div class="step"><span class="num">2)</span> Proud z dolní svorky kondenzátorem $C_1$:
 $$I_1 \;=\; \left(-\tfrac{U_Z}{2} - U_2\right)\!\cdot j\omega C_1$$</div>
-
+ 
 <div class="step"><span class="num">3)</span> Součet do uzlu (vykrátíme $j\omega$):
 $$\left(\tfrac{U_Z}{2} - U_2\right)\!C_2 + \left(-\tfrac{U_Z}{2} - U_2\right)\!C_1 \;=\; 0$$</div>
-
+ 
 <div class="step"><span class="num">4)</span> Úprava: $\;\tfrac{U_Z}{2}(C_2-C_1) = U_2(C_1+C_2)$.</div>
-
+ 
 <p>Výsledek (přesně tak, jak je v přednášce):</p>
 $$\boxed{\;U_2 \;=\; \dfrac{U_Z}{2}\cdot\dfrac{C_2 - C_1}{C_1 + C_2}\;}$$
-
+ 
 <p>Pro malou výchylku $\Delta x$: $C_2 = C_0/(d-\Delta x)$, $C_1 = C_0/(d+\Delta x)$ &nbsp;⇒&nbsp; $U_2 \approx (U_Z/2)\cdot\Delta x/d$ (lineární!).</p>
-
+ 
 <h4>Použití</h4>
 <ul>
 <li>Senzory posunutí (úchylkoměry).</li>
 <li>Senzory tlaku (pohyblivá membrána).</li>
 <li>Měření výšky hladiny, tloušťky fólie (s jedním kondenzátorem — nelineární).</li>
 </ul>
-
+ 
 </div>
 </details>
-
+ 
 <!-- Q4.2 -->
 <details class="q">
 <summary>
@@ -633,24 +656,24 @@ $$\boxed{\;U_2 \;=\; \dfrac{U_Z}{2}\cdot\dfrac{C_2 - C_1}{C_1 + C_2}\;}$$
   </span>
 </summary>
 <div class="answer">
-
+ 
 <h4>Princip — <span class="slideref">P8 · slide 14</span></h4>
 <p>Změna polohy feromagnetického jádra mění magnetický odpor obvodu $R_m$, a tím indukčnost cívky:</p>
 $$\boxed{\;L_X \;=\; \dfrac{N^2}{R_m} \;=\; \dfrac{N^2\,\mu_0\,\mu_r\,S}{d}\;}$$
-
+ 
 <h4>Vyhodnocovací obvody (nevyvážené můstky) — <span class="slideref">P8 · slide 14</span></h4>
 <table class="compact">
 <tr><th>Transformátorový můstek</th><th>Wheatstoneův typ</th></tr>
 <tr><td>Symetrický transformátor, dvě cívky $L_1$, $L_2$ (jedna roste, druhá klesá), výstup je úměrný rozdílu indukčností.</td>
 <td>V jedné větvi dvě indukčnosti $L_1$, $L_2$, ve druhé dva odpory $R$. Můstek se vyváží pro klidovou polohu, výchylka rozváží.</td></tr>
 </table>
-
+ 
 <h4>Diferenční zapojení</h4>
 <p>Dvě cívky, mezi nimiž se pohybuje jádro — jedna $L+\Delta L$, druhá $L-\Delta L$. <b>Výhody:</b> linearizace charakteristiky (vykrátí se sudé harmonické zkreslení), $2\times$ vyšší citlivost, kompenzace teploty.</p>
-
+ 
 </div>
 </details>
-
+ 
 <!-- Q4.3 -->
 <details class="q">
 <summary>
@@ -661,7 +684,7 @@ $$\boxed{\;L_X \;=\; \dfrac{N^2}{R_m} \;=\; \dfrac{N^2\,\mu_0\,\mu_r\,S}{d}\;}$$
   </span>
 </summary>
 <div class="answer">
-
+ 
 <h4>Princip — <span class="slideref">P8 · slide 15</span></h4>
 <p>LVDT má <b>jednu primární cívku</b> a <b>dvě sekundární</b> zapojené v sérii proti sobě (rozdílově). Uvnitř se posouvá feromagnetické jádro.</p>
 <ul>
@@ -670,15 +693,15 @@ $$\boxed{\;L_X \;=\; \dfrac{N^2}{R_m} \;=\; \dfrac{N^2\,\mu_0\,\mu_r\,S}{d}\;}$$
 <li>Velikost $|U_{out}|$ je úměrná velikosti výchylky.</li>
 <li><b>Fáze</b> $U_{out}$ vůči primárnímu napětí udává <b>směr</b> výchylky (změna fáze o $180°$ při průchodu nulou).</li>
 </ul>
-
+ 
 <h4>Lze použít běžný střídavý voltmetr?</h4>
 <p><b>Nelze (resp. je to nedostatečné).</b> Běžný střídavý voltmetr měří jen <b>velikost</b> (efektivní hodnotu) napětí, která je vždy kladná. Pro výchylku $+5\,\text{mm}$ a $-5\,\text{mm}$ by ukázal stejnou hodnotu — ztrácíme informaci o směru.</p>
-
+ 
 <div class="keytip"><b>Řešení:</b> Pro určení směru je nutné použít <b>fázově citlivý usměrňovač</b> (synchronní detektor), který srovnává fázi výstupu LVDT s fází budícího napětí a podle ní přidělí výstupu znaménko.</div>
-
+ 
 </div>
 </details>
-
+ 
 <!-- Q4.4 -->
 <details class="q">
 <summary>
@@ -689,12 +712,12 @@ $$\boxed{\;L_X \;=\; \dfrac{N^2}{R_m} \;=\; \dfrac{N^2\,\mu_0\,\mu_r\,S}{d}\;}$$
   </span>
 </summary>
 <div class="answer">
-
+ 
 <h4>Princip — <span class="slideref">P7 · slide 18</span></h4>
 <p>Mechanická deformace mění geometrii (délku $l$, průřez $S$) i odporovou rezistivitu vodiče: $R = \rho_0\,l/S$. Vztah:</p>
 $$\boxed{\;\dfrac{\Delta R}{R} \;=\; K_\varepsilon\cdot\dfrac{\Delta l}{l}\;}$$
 <p>$K_\varepsilon$ — <b>součinitel deformační citlivosti</b>: pro kovové tenzometry $K_\varepsilon\approx 2$, pro polovodičové až $200$.</p>
-
+ 
 <h4>Vyhodnocení Wheatstoneovým můstkem — <span class="slideref">P7 · slide 19</span></h4>
 <table class="compact">
 <tr><th>Konfigurace</th><th>Citlivost</th><th>Linearizace</th><th>Tepl. komp.</th></tr>
@@ -703,17 +726,17 @@ $$\boxed{\;\dfrac{\Delta R}{R} \;=\; K_\varepsilon\cdot\dfrac{\Delta l}{l}\;}$$
 <tr><td>4 aktivní (plný můstek)</td><td>$4\times$</td><td>ano</td><td>ano</td></tr>
 </table>
 <p>Senzory se v plném můstku zapojují tak, aby v sousedních ramenech byly opačná znaménka deformace ($+\Delta R$, $-\Delta R$) — tím se jejich příspěvky <b>sčítají</b>.</p>
-
+ 
 </div>
 </details>
-
+ 
 </section>
-
+ 
 <!-- ============================================================== -->
 <section class="topic" id="priklady">
 <h2>5. Vzorové výpočtové příklady (3 úlohy z přílohy)</h2>
 <div class="topic-sub">Tři úlohy se schématy ze zadání. Pro porovnání s vlastním řešením.</div>
-
+ 
 <!-- P1 -->
 <details class="q">
 <summary>
@@ -724,12 +747,12 @@ $$\boxed{\;\dfrac{\Delta R}{R} \;=\; K_\varepsilon\cdot\dfrac{\Delta l}{l}\;}$$
   </span>
 </summary>
 <div class="answer">
-
+ 
 <div class="imgwrap">
 <img src="priklad_1_Y_U_kondenzator.png" alt="Schéma P1 — Y→U převodník pro kondenzátor">
 <div class="caption">Schéma zadání P1 — kondenzátor (paralelní model $G_X$, $C_X$) na vstupu, $R_N$ ve zpětné vazbě.</div>
 </div>
-
+ 
 <h4>Postup</h4>
 <div class="step"><span class="num">1)</span> Identifikace: kondenzátor (paralelní model $C_X + G_X$) na vstupu, $R_N$ ve zpětné vazbě ⇒ převodník <b>Y→U</b>.</div>
 <div class="step"><span class="num">2)</span> Výchozí vztah:
@@ -740,10 +763,10 @@ $$\omega = 2\pi f = 2\pi\cdot 10\,000 = 62\,832\;\text{rad/s}$$</div>
 $$C_X \;=\; -\dfrac{\mathrm{Im}\,U_2}{\omega\,U_1\,R_N} \;=\; \dfrac{5{,}2}{62\,832\cdot 10\cdot 10\,000} \;=\; 8{,}276\cdot 10^{-10}\,\text{F} \;=\; \mathbf{827{,}6\;\text{pF}}$$</div>
 <div class="step"><span class="num">5)</span> Ztrátový činitel:
 $$\mathrm{tg}\,\delta_X \;=\; \dfrac{\mathrm{Re}\,U_2}{\mathrm{Im}\,U_2} \;=\; \dfrac{-0{,}4}{-5{,}2} \;=\; \mathbf{0{,}077}$$</div>
-
+ 
 </div>
 </details>
-
+ 
 <!-- P2 -->
 <details class="q">
 <summary>
@@ -754,27 +777,27 @@ $$\mathrm{tg}\,\delta_X \;=\; \dfrac{\mathrm{Re}\,U_2}{\mathrm{Im}\,U_2} \;=\; \
   </span>
 </summary>
 <div class="answer">
-
+ 
 <div class="imgwrap">
 <img src="priklad_2_Z_U_civka.png" alt="Schéma P2 — Z→U převodník pro cívku">
 <div class="caption">Schéma zadání P2 — $R_N$ na vstupu, cívka (sériový model $L_X$, $R_X$) ve zpětné vazbě.</div>
 </div>
-
+ 
 <h4>Odvození</h4>
 <p>Pro převodník Z→U s cívkou ve zpětné vazbě (<span class="slideref">P8 · slide 7</span>):</p>
 $$U_2 \;=\; -\,\dfrac{R_X + j\omega L_X}{R_N}\,U_1$$
 $$\boxed{\;R_X = -\,\mathrm{Re}\,U_2\cdot\dfrac{R_N}{U_1}\,, \qquad L_X = -\,\dfrac{\mathrm{Im}\,U_2}{\omega}\cdot\dfrac{R_N}{U_1}\;}$$
-
+ 
 <h4>Výpočet</h4>
 <div class="step"><span class="num">1)</span> $\omega = 2\pi\cdot 1000 = 6\,283{,}2\;\text{rad/s}$</div>
 <div class="step"><span class="num">2)</span> $R_X = -(-0{,}03)\cdot \dfrac{10\,000}{1} = \mathbf{300\;\Omega}$</div>
 <div class="step"><span class="num">3)</span> $L_X = -(-0{,}6)\cdot \dfrac{10\,000}{6\,283{,}2\cdot 1} = \dfrac{6\,000}{6\,283{,}2} = \mathbf{0{,}955\;\text{H}} \;=\; 955\;\text{mH}$</div>
-
+ 
 <div class="errorfix"><b>Pozor — přesnost:</b> Oficiální klíč k tomuto zadání uvádí $L_X = 0{,}96\,\text{H}$, což je hrubě zaokrouhleno (rozdíl $\approx 0{,}5\,\%$). Přesný výpočet $6\,000/(2\pi\cdot 1000) = 3/\pi$ dává $\mathbf{0{,}9549\,\text{H}}$, tj. ≈ <b>0,955 H</b>. Při zápisu použij přesnější hodnotu, ale nediv se, když opravující bere obě.</div>
-
+ 
 <div class="step"><span class="num">4)</span> Bonus — činitel jakosti:
 $$Q_X \;=\; \dfrac{\omega L_X}{R_X} \;=\; \dfrac{\mathrm{Im}\,U_2}{\mathrm{Re}\,U_2} \;=\; \dfrac{-0{,}6}{-0{,}03} \;=\; 20$$</div>
-
+ 
 <h4>Stínění a parazitní admitance — <span class="slideref">P8 · slide 8</span></h4>
 <p>Stínění cívky se připojuje na <b>zem</b> (nikoli na invertující vstup). Admitance vůči stínění:</p>
 <ul>
@@ -783,10 +806,10 @@ $$Q_X \;=\; \dfrac{\omega L_X}{R_X} \;=\; \dfrac{\mathrm{Im}\,U_2}{\mathrm{Re}\,
 <li>$Y_{30}$ paralelně k výstupu OZ — <b>neuplatní se</b> (ideální zdroj $U_2$).</li>
 </ul>
 <p><b>Závěr:</b> parazitní admitance měřené cívky vůči stínění se ve výsledku <b>neuplatní</b>.</p>
-
+ 
 </div>
 </details>
-
+ 
 <!-- P3 -->
 <details class="q" id="p3">
 <summary>
@@ -797,22 +820,22 @@ $$Q_X \;=\; \dfrac{\omega L_X}{R_X} \;=\; \dfrac{\mathrm{Im}\,U_2}{\mathrm{Re}\,
   </span>
 </summary>
 <div class="answer">
-
+ 
 <div class="imgwrap">
 <img src="priklad_3_Y_U_kondenzator.png" alt="Schéma P3 — Y→U převodník pro kondenzátor">
 <div class="caption">Schéma zadání P3 — kondenzátor (paralelní model $G_X$, $C_X$) na vstupu, $R_N$ ve zpětné vazbě.</div>
 </div>
-
+ 
 <h4>Odvození</h4>
 <p>Y→U převodník: kondenzátor (paralelní model $C_X + G_X$) na vstupu, $R_N$ ve zpětné vazbě.</p>
 $$U_2 \;=\; -\,U_1\,R_N\,(G_X + j\omega C_X)$$
 $$\boxed{\;C_X \;=\; -\,\dfrac{\mathrm{Im}\,U_2}{\omega\,U_1\,R_N}\,, \qquad \mathrm{tg}\,\delta \;=\; \dfrac{\mathrm{Re}\,U_2}{\mathrm{Im}\,U_2}\;}$$
-
+ 
 <h4>Výpočet</h4>
 <div class="step"><span class="num">1)</span> $\omega = 2\pi\cdot 1592 \approx 10\,000\;\text{rad/s}$ (volba $f$ není náhoda — $\omega$ vychází kulaté).</div>
 <div class="step"><span class="num">2)</span> $C_X = \dfrac{6{,}3}{10\,000\cdot 10\cdot 10\,000} = 6{,}3\cdot 10^{-9}\,\text{F} = \mathbf{6{,}3\,\text{nF}}$</div>
 <div class="step"><span class="num">3)</span> $\mathrm{tg}\,\delta = \dfrac{-0{,}2}{-6{,}3} = \mathbf{0{,}032}$</div>
-
+ 
 <h4>Stínění pro průchozí kapacitu</h4>
 <p>U <b>průchozí (svorkové) kapacity</b> kondenzátoru měříme tu část, která je „mezi" oběma elektrodami; parazitní kapacity každé elektrody vůči okolí (stínění) chceme vyloučit. <b>Trojsvorkové (tříelektrodové) připojení — stínění obou svorek se připojí na zem (uzel 0):</b></p>
 <ul>
@@ -820,18 +843,18 @@ $$\boxed{\;C_X \;=\; -\,\dfrac{\mathrm{Im}\,U_2}{\omega\,U_1\,R_N}\,, \qquad \ma
 <li>Stínění výstupní svorky je rovněž <b>na zemi</b>. Kapacita $C_{p2}$ je pak mezi virtuální nulou (potenciál $0\,\text{V}$ na invertujícím vstupu OZ) a reálnou zemí ($0\,\text{V}$). Mezi dvěma uzly se stejným potenciálem <b>neteče žádný proud</b>, takže $C_{p2}$ se ve výsledku neuplatní.</li>
 </ul>
 <div class="keytip"><b>Závěr:</b> Při správném zapojení stínění obou svorek na <b>zem</b> se parazitní admitance měřeného kondenzátoru vůči stínění <b>neuplatní</b>, protože vždy leží buď paralelně k ideálnímu zdroji, nebo mezi dvěma uzly se stejným potenciálem (virtuální nula = reálná zem = 0 V).</div>
-
+ 
 <div class="errorfix"><b>Důležitá nuance:</b> Stínění (Guard) vždy uzemnit — nikdy ho nepřipojovat na virtuální nulu OZ. Připojení stínění přímo na vstup zesilovače by zaneslo veškerý šum z okolí přímo do měřicí cesty.</div>
-
+ 
 </div>
 </details>
-
+ 
 </section>
-
+ 
 <!-- ============================================================== -->
 <section class="topic" id="cheat">
 <h2>6. Tahák — klíčové vztahy v jednom přehledu</h2>
-
+ 
 <div class="formula">
 <p style="margin-top:0"><b style="color:var(--accent)">Měření odporů</b></p>
 <ul>
@@ -843,7 +866,7 @@ $$\boxed{\;C_X \;=\; -\,\dfrac{\mathrm{Im}\,U_2}{\omega\,U_1\,R_N}\,, \qquad \ma
 <li>Sériová srovnávací: $R_X = (U_X/U_N)\,R_N$, &nbsp; $u_r(R_X)=\sqrt{u_r^2(U_X)+u_r^2(U_N)+u_r^2(R_N)}$</li>
 </ul>
 </div>
-
+ 
 <div class="formula">
 <p style="margin-top:0"><b style="color:var(--accent)">Měření kmitočtu a fáze</b></p>
 <ul>
@@ -855,7 +878,7 @@ $$\boxed{\;C_X \;=\; -\,\dfrac{\mathrm{Im}\,U_2}{\omega\,U_1\,R_N}\,, \qquad \ma
 <li>Fáze: $\varphi = 2\pi t_0/T = 360 t_0/T\;(°)$</li>
 </ul>
 </div>
-
+ 
 <div class="formula">
 <p style="margin-top:0"><b style="color:var(--accent)">Měření impedancí (klíčové!)</b></p>
 <table class="compact" style="font-size:13px">
@@ -867,7 +890,7 @@ $$\boxed{\;C_X \;=\; -\,\dfrac{\mathrm{Im}\,U_2}{\omega\,U_1\,R_N}\,, \qquad \ma
 <tr><td>Im/Re</td><td>$Q_X = \mathrm{Im}/\mathrm{Re}$</td><td>$\mathrm{tg}\,\delta = \mathrm{Re}/\mathrm{Im}$</td></tr>
 </table>
 </div>
-
+ 
 <div class="formula">
 <p style="margin-top:0"><b style="color:var(--accent)">Senzory</b></p>
 <ul>
@@ -878,7 +901,7 @@ $$\boxed{\;C_X \;=\; -\,\dfrac{\mathrm{Im}\,U_2}{\omega\,U_1\,R_N}\,, \qquad \ma
 <li>Tenzometr: $\Delta R/R = K_\varepsilon\cdot\Delta l/l$, &nbsp; $K_\varepsilon^{kov}\approx 2$</li>
 </ul>
 </div>
-
+ 
 <div class="warning">
 <b>Zásady pro správné odvození u impedančních úloh:</b>
 <ol style="margin:6px 0 0 18px;padding:0">
@@ -890,15 +913,15 @@ $$\boxed{\;C_X \;=\; -\,\dfrac{\mathrm{Im}\,U_2}{\omega\,U_1\,R_N}\,, \qquad \ma
 <li>Stínění (Guard) <b>vždy na zem</b>, nikdy ne na virtuální nulu.</li>
 </ol>
 </div>
-
+ 
 </section>
-
+ 
 </div>
-
+ 
 <footer>
 B1B38EMA · Příprava na 12. týden · Vychází ze zadání variant C-1 až C-10, D-3b, D-24b a přednášek 6–8.<br>
 Záloha verze před opravami: <code>test_priprava_zaloha.html</code> &nbsp;|&nbsp; Hodně štěstí u testu, Jane!
 </footer>
-
+ 
 </body>
 </html>
